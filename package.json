@@ -1,0 +1,39 @@
+{
+  "name": "open-ui-toolbox",
+  "version": "0.0.1",
+  "description": "A basic set of react components so I don't need to build the same stuff for every project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styleguide": "./node_modules/react-styleguide-generator/bin/rsg \"components/**/*.jsx\"",
+    "start": "npm run styleguide && serve ./styleguide"
+  },
+  "keywords": [
+    "open",
+    "react",
+    "ui",
+    "components"
+  ],
+  "author": "James Carney",
+  "license": "WTFPL",
+  "dependencies": {
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-styleguide-generator": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
+    "express": "^4.15.2",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0"
+  }
+}
