@@ -1,8 +1,8 @@
 {
   "name": "open-ui-toolbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A basic set of react components so I don't need to build the same stuff for every project",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styleguide": "./node_modules/react-styleguide-generator/bin/rsg \"components/**/*.jsx\"",
