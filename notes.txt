@@ -1,0 +1,3 @@
+look into this for more active development:
+https://github.com/theogravity/react-styleguide-generator-alt
+(swaps out browserify for webpack, supports hot-loading & dev server)
