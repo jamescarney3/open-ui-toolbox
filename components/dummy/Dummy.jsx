@@ -6,7 +6,9 @@ export default class Dummy extends Component {
     category: 'Dummy',
     title: 'Dummy',
     description: 'Just a dummy component to see if this works',
-    code: `<Dummy />`,
+    code: `
+      <Dummy />
+    `,
   }
   render() {
     return (
