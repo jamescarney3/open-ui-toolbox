@@ -1,4 +1,6 @@
 .DS_Store
-node_modules/*
 styleguide
 notes.txt
+
+node_modules/*
+dist/*
