@@ -1,3 +1,4 @@
 import { Dummy } from './dummy';
+import { Example } from './example';
 
-export default { Dummy };
+export default { Dummy, Example };
