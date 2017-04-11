@@ -10,7 +10,10 @@ REACT HOT LOADER
 EXPRESS
 WEBPACK DEV SERVER
 
-
 look into this for more active development:
 https://github.com/theogravity/react-styleguide-generator-alt
 (swaps out browserify for webpack, supports hot-loading & dev server)
+
+look into password protection with serve module
+
+add serve to dependencies
