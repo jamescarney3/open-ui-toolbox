@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// RSG seems unable to handle non-extension imports
+// eslint-disable-next-line import/extensions
 import Dummy from './Dummy.jsx';
 
 export default class extends Component {
