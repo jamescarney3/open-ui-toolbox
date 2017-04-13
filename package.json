@@ -4,9 +4,8 @@
   "description": "A basic set of react components so I don't need to build the same stuff for every project",
   "main": "dist/bundle.js",
   "scripts": {
-    "docs": "cp -R styleguide/* docs/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "styleguide": "./node_modules/react-styleguide-generator/bin/rsg \"components/**/*.jsx\"",
+    "styleguide": "rsg \"components/**/styleguide.jsx\"",
+    "serve": "serve ./styleguide",
     "start": "npm run styleguide && serve ./styleguide"
   },
   "keywords": [
@@ -23,8 +22,7 @@
   },
   "dependencies": {
     "react": "^15.5.3",
-    "react-dom": "^15.5.3",
-    "react-styleguide-generator": "^1.4.0"
+    "react-dom": "^15.5.3"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -40,8 +38,9 @@
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.15.2",
     "react-hot-loader": "^1.3.1",
+    "rsg-alt": "^3.16.0",
     "serve": "^5.1.3",
-    "webpack": "^2.3.3",
+    "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0"
   }
