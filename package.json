@@ -21,6 +21,7 @@
     "url": "https://github.com/jamescarney3/open-ui-toolbox.git"
   },
   "dependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.3",
     "react-dom": "^15.5.3"
   },
