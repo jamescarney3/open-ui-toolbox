@@ -1,0 +1,42 @@
+.open-ui-toolbox-popover {
+  .arrow {
+    border-color: #555555;
+    border-style: solid;
+    position: fixed;
+
+    &.top {
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom: none;
+    }
+
+    &.right {
+      border-bottom-color: transparent;
+      border-top-color: transparent;
+      border-left: none;
+    }
+
+    &.bottom {
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top: none;
+    }
+
+    &.left {
+      border-bottom-color: transparent;
+      border-top-color: transparent;
+      border-right: none;
+    }
+  }
+
+  .popover-body {
+    position: fixed;
+    background-color: #555555;
+    border-radius: 6px;
+    color: #EEEEEE;
+    padding: 13px;
+    // temp
+    top: 0px;
+    left: 0px;
+  }
+}

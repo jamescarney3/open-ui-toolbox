@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import { ANCHORS, getAttachCoords } from './utils';
+import PopoverBody from './PopoverBody';
+import { ANCHORS, DIRECTIONS, getArrowStyles, getBodyStyles } from './utils';
+
+import './popover.scss';
 
 export default class PopoverWrapper extends Component {
   constructor(props) {
@@ -11,7 +14,8 @@ export default class PopoverWrapper extends Component {
     };
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.renderPopover = this.renderPopover.bind(this);
+    this.renderArrow = this.renderArrow.bind(this);
+    this.renderPopoverBody = this.renderPopoverBody.bind(this);
   }
 
   onMouseEnter() {
@@ -22,16 +26,35 @@ export default class PopoverWrapper extends Component {
     this.setState({ hover: false });
   }
 
-  renderPopover() {
+  renderArrow() {
     if (this.state.hover) {
-      const attachCoords = getAttachCoords(this.target.getBoundingClientRect(), this.props.attach);
-      const popoverStyle = {
-        color: 'red',
-        position: 'fixed',
-        top: attachCoords.y,
-        left: attachCoords.x,
-      };
-      return (<div style={popoverStyle}>Pop me over</div>);
+      const { attach, direction, arrowSize } = this.props;
+      const clientRect = this.target.getBoundingClientRect();
+      const computedStyles = getArrowStyles({ arrowSize, attach, clientRect, direction });
+
+      return (
+        <div
+          className={`arrow ${direction}`}
+          ref={arrow => (this.arrow = arrow)}
+          style={computedStyles}
+        />
+      );
+    }
+    return null;
+  }
+
+  renderPopoverBody() {
+    if (this.state.hover) {
+      const { attach, direction, arrowSize } = this.props;
+      const clientRect = this.target.getBoundingClientRect();
+      return (
+        <PopoverBody
+          maxWidth={this.props.maxWidth}
+          getBodyStyles={getBodyStyles({ arrowSize, attach, clientRect, direction })}
+        >
+          {this.props.body}
+        </PopoverBody>
+      );
     }
     return null;
   }
@@ -40,21 +63,30 @@ export default class PopoverWrapper extends Component {
     const { onMouseEnter, onMouseLeave } = this;
     return (
       <div
+        className="open-ui-toolbox-popover"
         ref={target => (this.target = target)}
         {...{ onMouseEnter, onMouseLeave }}
       >
         {this.props.children}
-        {this.renderPopover()}
+        {this.renderArrow()}
+        {this.renderPopoverBody()}
       </div>
     );
   }
 }
 
 PopoverWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
   attach: PropTypes.oneOf(ANCHORS),
+  arrowSize: PropTypes.number,
+  body: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  direction: PropTypes.oneOf(DIRECTIONS),
+  maxWidth: PropTypes.number,
 };
 
 PopoverWrapper.defaultProps = {
   attach: 'top',
+  arrowSize: 20,
+  direction: 'top',
+  maxWidth: 150,
 };
