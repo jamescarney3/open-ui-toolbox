@@ -10,7 +10,7 @@ export default class extends Component {
     category: 'Popover',
     title: 'PopoverWrapper',
     description: 'Wrap another element in this to give it a configurable popover',
-    // wonky preformatting here, ugly indentation
+    // wonky pre-formatting here, ugly indentation
     // is a necessary evil
     code: `
 <PopoverWrapper>
@@ -21,7 +21,9 @@ export default class extends Component {
 
   render() {
     return (
-      <PopoverWrapper>
+      <PopoverWrapper
+        attach="bottom"
+      >
         <div>Mouse over me, please</div>
       </PopoverWrapper>
     );

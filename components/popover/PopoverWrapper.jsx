@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+import { ANCHORS, getAttachCoords } from './utils';
+
 export default class PopoverWrapper extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,14 @@ export default class PopoverWrapper extends Component {
 
   renderPopover() {
     if (this.state.hover) {
-      return (<div>Pop me over</div>);
+      const attachCoords = getAttachCoords(this.target.getBoundingClientRect(), this.props.attach);
+      const popoverStyle = {
+        color: 'red',
+        position: 'fixed',
+        top: attachCoords.y,
+        left: attachCoords.x,
+      };
+      return (<div style={popoverStyle}>Pop me over</div>);
     }
     return null;
   }
@@ -30,7 +39,10 @@ export default class PopoverWrapper extends Component {
   render() {
     const { onMouseEnter, onMouseLeave } = this;
     return (
-      <div {...{ onMouseEnter, onMouseLeave }}>
+      <div
+        ref={target => (this.target = target)}
+        {...{ onMouseEnter, onMouseLeave }}
+      >
         {this.props.children}
         {this.renderPopover()}
       </div>
@@ -40,4 +52,9 @@ export default class PopoverWrapper extends Component {
 
 PopoverWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  attach: PropTypes.oneOf(ANCHORS),
+};
+
+PopoverWrapper.defaultProps = {
+  attach: 'top',
 };
