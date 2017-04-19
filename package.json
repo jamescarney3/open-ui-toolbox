@@ -4,6 +4,7 @@
   "description": "A basic set of react components so I don't need to build the same stuff for every project",
   "main": "dist/bundle.js",
   "scripts": {
+    "dev": "rsg \"components/**/styleguide.jsx\" -c 'styleguide.js' -d 8080",
     "styleguide": "rsg \"components/**/styleguide.jsx\" -c 'styleguide.js'",
     "serve": "serve ./styleguide",
     "start": "npm run styleguide && serve ./styleguide"
