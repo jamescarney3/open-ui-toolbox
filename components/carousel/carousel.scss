@@ -2,4 +2,8 @@
   width: 100%;
   overflow: hidden;
   background-color: turquoise;
+
+  .carousel-element {
+    transition: 1s ease;
+  }
 }

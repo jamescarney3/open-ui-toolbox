@@ -23,16 +23,18 @@ export default class CarouselWrapper extends Component {
   }
 
   renderChildren() {
+    // ALL THE MAGIC WORDS HERE KILL THEM KILL THEM
     const style = {
       position: 'relative',
       float: 'left',
-      width: '200px',
+      width: '150px',
       height: '100px',
       backgroundColor: 'red',
-      left: `${200 * this.state.offset}px`,
+      left: `${150 * this.state.offset}px`,
     };
     return this.props.children.map(child => (
       <div
+        className="carousel-element"
         style={style}
       >
         {child}
