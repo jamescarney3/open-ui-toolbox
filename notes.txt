@@ -16,17 +16,7 @@ https://github.com/theogravity/react-styleguide-generator-alt
 
 look into password protection with serve module
 
-add serve to dependencies
-
-
-
-
-ARROW RENDERING:
-  css selector for arrows:
-    - border color
-  css selector for directions:
-    - border transparencies
-    - borders with none
-  computed styles by all props:
-    - positional stuff (top/left)
-    - border widths
+TODO:
+  carousel
+  context menu
+  
