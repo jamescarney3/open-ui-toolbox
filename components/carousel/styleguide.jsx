@@ -15,11 +15,19 @@ export default class extends Component {
 
   render() {
     return (
-      <CarouselWrapper>
-        <div>Foo.</div>
-        <div>Bar.</div>
-        <div>Baz.</div>
-      </CarouselWrapper>
+      <div>
+        <CarouselWrapper>
+          <a href="http://lorempixel.com/400/200/sports/1">
+            <img src="http://lorempixel.com/400/200/sports/1" alt="" />
+          </a>
+          <a href="http://lorempixel.com/400/200/sports/2">
+            <img src="http://lorempixel.com/400/200/sports/2" alt="" />
+          </a>
+          <a href="http://lorempixel.com/400/200/sports/3">
+            <img src="http://lorempixel.com/400/200/sports/3" alt="" />
+          </a>
+        </CarouselWrapper>
+      </div>
     );
   }
 }

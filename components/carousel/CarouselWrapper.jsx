@@ -9,37 +9,60 @@ export default class CarouselWrapper extends Component {
     this.state = {
       offset: 0,
     };
+    this.getChildren = this.getChildren.bind(this);
     this.renderChildren = this.renderChildren.bind(this);
+    this.renderPane = this.renderPane.bind(this);
     this.rotateLeft = this.rotateLeft.bind(this);
     this.rotateRight = this.rotateRight.bind(this);
   }
 
+  getChildren() {
+    return Array.isArray(this.props.children) ? this.props.children : [this.props.children];
+  }
+
   rotateRight() {
-    this.setState({ offset: this.state.offset + 1 });
+    const { offset } = this.state;
+    if (offset > 0) {
+      this.setState({ offset: offset - 1 });
+    }
   }
 
   rotateLeft() {
-    this.setState({ offset: this.state.offset - 1 });
+    const [{ offset }, children] = [this.state, this.getChildren()];
+    if (offset < children.length - 1) {
+      this.setState({ offset: this.state.offset + 1 });
+    }
   }
 
+
   renderChildren() {
-    // ALL THE MAGIC WORDS HERE KILL THEM KILL THEM
-    const style = {
-      position: 'relative',
-      float: 'left',
-      width: '150px',
-      height: '100px',
-      backgroundColor: 'red',
-      left: `${150 * this.state.offset}px`,
-    };
-    return this.props.children.map(child => (
+    const panelStyle = { width: `${100 / this.props.children.length}%` };
+    return this.getChildren().map((child, idx) => (
       <div
-        className="carousel-element"
-        style={style}
+        // eslint-disable-next-line react/no-array-index-key
+        key={idx}
+        className="carousel-panel"
+        style={panelStyle}
       >
         {child}
       </div>
     ));
+  }
+
+  renderPane() {
+    const paneStyle = {
+      position: 'relative',
+      width: `${100 * this.props.children.length}%`,
+      right: `${100 * this.state.offset}%`,
+    };
+    return (
+      <div
+        className="carousel-pane"
+        style={paneStyle}
+      >
+        {this.renderChildren()}
+      </div>
+    );
   }
 
   render() {
@@ -49,7 +72,7 @@ export default class CarouselWrapper extends Component {
           ref={wrap => (this.wrap = wrap)}
           className="open-ui-toolbox-carousel"
         >
-          {this.renderChildren()}
+          {this.renderPane()}
         </div>
         <button onClick={this.rotateLeft}>left</button>
         <button onClick={this.rotateRight}>right</button>
