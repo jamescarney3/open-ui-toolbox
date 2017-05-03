@@ -9,23 +9,23 @@ export default class extends Component {
     title: 'CarouselWrapper',
     description: 'Describe meeeeeeee',
     code: `
-      <CarouselWrapper />
+<div style={{ width: '400px', height: '200px' }}>
+  <CarouselWrapper>
+    <img src="http://lorempixel.com/400/200/sports/1" alt="" />
+    <img src="http://lorempixel.com/400/200/sports/2" alt="" />
+    <img src="http://lorempixel.com/400/200/sports/3" alt="" />
+  </CarouselWrapper>
+</div>
     `,
   }
 
   render() {
     return (
-      <div>
+      <div style={{ width: '400px', height: '200px' }}>
         <CarouselWrapper>
-          <a href="http://lorempixel.com/400/200/sports/1">
-            <img src="http://lorempixel.com/400/200/sports/1" alt="" />
-          </a>
-          <a href="http://lorempixel.com/400/200/sports/2">
-            <img src="http://lorempixel.com/400/200/sports/2" alt="" />
-          </a>
-          <a href="http://lorempixel.com/400/200/sports/3">
-            <img src="http://lorempixel.com/400/200/sports/3" alt="" />
-          </a>
+          <img src="http://lorempixel.com/400/200/sports/1" alt="" />
+          <img src="http://lorempixel.com/400/200/sports/2" alt="" />
+          <img src="http://lorempixel.com/400/200/sports/3" alt="" />
         </CarouselWrapper>
       </div>
     );

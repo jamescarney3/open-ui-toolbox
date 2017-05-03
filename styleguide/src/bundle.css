@@ -1,3 +1,12 @@
+.open-ui-toolbox-carousel {
+  width: 100%;
+  overflow: hidden; }
+  .open-ui-toolbox-carousel .carousel-pane {
+    transition: 0.5s ease; }
+    .open-ui-toolbox-carousel .carousel-pane .carousel-panel {
+      float: left; }
+      .open-ui-toolbox-carousel .carousel-pane .carousel-panel .carousel-panel-inner {
+        float: left; }
 .open-ui-toolbox-popover .arrow {
   border-color: #555555;
   border-style: solid;
