@@ -1,6 +1,5 @@
 import { CarouselWrapper } from './carousel';
-import { Dummy } from './dummy';
-import { Example } from './example';
+import { Paginator } from './paginator';
 import { PopoverWrapper } from './popover';
 
-export default { CarouselWrapper, Dummy, Example, PopoverWrapper };
+export default { CarouselWrapper, Paginator, PopoverWrapper };
