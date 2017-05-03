@@ -4,10 +4,15 @@ import CarouselWrapper from './CarouselWrapper';
 
 export default class extends Component {
   static styleguide = {
-    index: '4.1',
+    index: '2.1',
     category: 'Carousel',
     title: 'CarouselWrapper',
-    description: 'Describe meeeeeeee',
+    description: `
+      Wrap one or more elements in a CarouselWrapper component to inject them
+      into an interactive animated carousel element
+    `,
+    // wonky pre-formatting here, ugly indentation
+    // is a necessary evil
     code: `
 <div style={{ width: '400px', height: '200px' }}>
   <CarouselWrapper>

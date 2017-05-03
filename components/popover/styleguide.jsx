@@ -4,7 +4,7 @@ import PopoverWrapper from './PopoverWrapper';
 
 export default class extends Component {
   static styleguide = {
-    index: '3.1',
+    index: '1.1',
     category: 'Popover',
     title: 'PopoverWrapper',
     description: 'Wrap another element in this to give it a configurable popover',

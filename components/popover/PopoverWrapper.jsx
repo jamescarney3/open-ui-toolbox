@@ -6,6 +6,13 @@ import { ANCHORS, DIRECTIONS, getArrowStyles, getBodyStyles } from './utils';
 
 import './popover.scss';
 
+/*
+Wrapper component that renders a fixed position tooltip attached to its child -
+provides an interface to specify tooltip element's positioning relative to
+child component
+
+TODO: update body prop to take either text or nodes
+*/
 export default class PopoverWrapper extends Component {
   constructor(props) {
     super(props);
